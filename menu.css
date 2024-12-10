@@ -1,0 +1,120 @@
+#menu {
+    text-align: center;
+    margin: 0 auto;
+    padding: 20px;
+    max-width: 900px;
+}
+
+#menu h2 {
+    font-size: 2.5em;
+    color: #B22222;
+    font-family: 'Georgia', serif;
+    margin-bottom: 20px;
+}
+
+#menu p {
+    color: #555;
+    font-size: 1.1em;
+    margin-bottom: 30px;
+}
+
+.menu-section {
+    margin-bottom: 40px;
+}
+
+.menu-section h3 {
+    font-size: 2em;
+    color: #FF6347;
+    font-family: 'Georgia', serif;
+    margin-bottom: 20px;
+    border-bottom: 2px solid #B22222;
+    display: inline-block;
+    padding-bottom: 10px;
+}
+
+.menu-items {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+.menu-item {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    width: 250px;
+    text-align: center;
+    padding: 15px;
+}
+
+.menu-item img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin-bottom: 10px;
+}
+
+.menu-item h4 {
+    font-size: 1.2em;
+    color: #333;
+}
+
+.menu-item p {
+    font-size: 0.9em;
+    color: #666;
+    line-height: 1.4;
+}
+
+.bebidas-btn {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background-color: #FF6347; /* Color tomate */
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1em;
+    font-family: 'Georgia', serif;
+    border-radius: 5px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.bebidas-btn:hover {
+    background-color: #B22222; /* Cambio a rojo oscuro al pasar el mouse */
+}
+
+
+/* Optimización de #menu */
+#menu {
+    position: relative;
+    text-align: center;
+    margin: 0 auto;
+    padding: 20px;
+    max-width: 900px;
+}
+
+/* Estilos para el anuncio */
+.anuncio-pida-ya {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    background-color: #FFD700; /* Color dorado llamativo */
+    color: #000;
+    font-size: 1.2em;
+    font-family: 'Georgia', serif;
+    padding: 15px 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    text-decoration: none;
+    cursor: pointer;
+    z-index: 1000; /* Asegura que esté por encima de otros elementos */
+    display: none; /* Inicia oculto */
+    transition: background-color 0.3s ease;
+}
+
+.anuncio-pida-ya:hover {
+    background-color: #FFA500; /* Cambia a naranja al pasar el mouse */
+}

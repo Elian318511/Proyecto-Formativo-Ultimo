@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Restaurante Mexicano</title>
+    <link rel="stylesheet" href="pidaya.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Menú de Comidas y Bebidas -->
+        <div class="menu-section">
+            <div class="menu-header">
+                <button id="viewFoodBtn" class="menu-btn">Ver Comidas</button>
+                <button id="viewBeveragesBtn" class="menu-btn">Ver Bebidas</button>
+            </div>
+            <div id="menuContent" class="menu-content">
+                <!-- Contenido del menú se cargará dinámicamente -->
+            </div>
+        </div>
+
+        <!-- Factura -->
+        <div class="bill-section">
+            <h2>Factura</h2>
+            <div id="billItems" class="bill-items"></div>
+            <div class="total-section">
+                <button id="calculateTotalBtn">ECHAR AL CARRITO</button>
+                <p>Total: $<span id="totalPrice">0</span></p>
+                
+            </div>
+        </div>
+    </div>
+    <script src="pidaya.js"></script>
+</body>
+</html>

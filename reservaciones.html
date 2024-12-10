@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reservaciones</title>
+    <link rel="stylesheet" href="reservaciones.css">
+    <script>
+        // Variable global para almacenar las reservaciones
+        let reservaciones = [];
+
+        // Función para guardar una nueva reservación
+        function guardarReservacion() {
+            const nombre = document.getElementById("nombre").value;
+            const correo = document.getElementById("correo").value;
+            const fecha = document.getElementById("fecha").value;
+            const hora = document.getElementById("hora").value;
+            const personas = document.getElementById("personas").value;
+
+            if (nombre && correo && fecha && hora && personas) {
+                const nuevaReservacion = { nombre, correo, fecha, hora, personas };
+                reservaciones.push(nuevaReservacion);
+
+                // Mostrar las reservaciones en la tabla directamente
+                mostrarReservaciones();
+                alert("Reservación registrada correctamente.");
+                document.getElementById("reservacionForm").reset();
+            } else {
+                alert("Por favor, completa todos los campos.");
+            }
+        }
+
+        // Función para mostrar las reservaciones
+        function mostrarReservaciones() {
+            const tabla = document.getElementById("tablaReservaciones");
+            tabla.innerHTML = ""; // Limpiar la tabla
+
+            reservaciones.forEach((reservacion, index) => {
+                const fila = document.createElement("tr");
+                fila.innerHTML = `
+                    <td>${index + 1}</td>
+                    <td>${reservacion.nombre}</td>
+                    <td>${reservacion.correo}</td>
+                    <td>${reservacion.fecha}</td>
+                    <td>${reservacion.hora}</td>
+                    <td>${reservacion.personas}</td>
+                `;
+                tabla.appendChild(fila);
+            });
+
+            // Mostrar o esconder el mensaje de "Sin reservaciones"
+            document.getElementById("sinReservaciones").style.display = reservaciones.length ? "none" : "block";
+        }
+    </script>
+</head>
+<body>
+    <h1>Reservaciones</h1>
+    <form id="reservacionForm" onsubmit="event.preventDefault(); guardarReservacion();">
+        <label for="nombre">Nombre:</label><br>
+        <input type="text" id="nombre" required><br><br>
+
+        <label for="correo">Correo:</label><br>
+        <input type="email" id="correo" required><br><br>
+
+        <label for="fecha">Fecha:</label><br>
+        <input type="date" id="fecha" required><br><br>
+
+        <label for="hora">Hora:</label><br>
+        <input type="time" id="hora" required><br><br>
+
+        <label for="personas">Número de Personas:</label><br>
+        <input type="number" id="personas" required><br><br>
+
+        <button type="submit">Reservar</button>
+    </form>
+    <br>
+    <h2>Lista de Reservaciones</h2>
+    <p id="sinReservaciones">No hay reservaciones registradas.</p>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>#</th>
+                <th>Nombre</th>
+                <th>Correo</th>
+                <th>Fecha</th>
+                <th>Hora</th>
+                <th>Personas</th>
+            </tr>
+        </thead>
+        <tbody id="tablaReservaciones"></tbody>
+    </table>
+</body>
+</html>

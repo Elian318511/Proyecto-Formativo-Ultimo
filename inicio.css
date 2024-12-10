@@ -1,0 +1,68 @@
+.hero-section {
+    height: 100vh; /* Ocupa la altura completa de la pantalla */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-image: url('FondoRestaurante.jpg'); /* Cambia 'tu-imagen.jpg' por el nombre del archivo de tu imagen */
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed; /* Para efecto de parallax */
+    color: #fff;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero-section::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5); /* Oscurece el fondo para mejorar la legibilidad */
+}
+
+.hero-section h2 {
+    font-size: 3.5rem;
+    font-family: 'Trebuchet MS', sans-serif;
+    font-weight: bold;
+    margin-bottom: 15px;
+    z-index: 1;
+    position: relative;
+}
+
+.hero-section p {
+    font-size: 1.2rem;
+    line-height: 1.8;
+    max-width: 600px;
+    margin: 0 auto;
+    z-index: 1;
+    position: relative;
+    color: #ffe4b5;
+}
+
+.hero-section p:last-of-type {
+    margin-top: 20px;
+    font-weight: bold;
+}
+
+.hero-section button {
+    margin-top: 20px;
+    padding: 12px 30px;
+    background-color: #d32f2f;
+    color: #fff;
+    font-size: 1rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    z-index: 1;
+    position: relative;
+}
+
+.hero-section button:hover {
+    background-color: #a52828;
+}
+
